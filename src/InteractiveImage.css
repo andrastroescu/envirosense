@@ -1,0 +1,7 @@
+.interactive-image-container {
+    transition: transform 0.3s ease;
+}
+
+.interactive-image-container.hovered {
+    transform: scale(1.2);
+}

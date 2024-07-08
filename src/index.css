@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+ }
+
+ html, body {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ 
+:root {
+  --header-height: 3.5rem;
+  --first-color: #198754;
+  --title-color: hsl(0, 1%, 61%);
+  --text-color: hsl(120, 29%, 77%);
+  --text-color-custom: hsl(0, 0%, 0%);
+  --body-color: hsl(0, 0%, 6%);
+  --body-font: "Montserrat", sans-serif;
+  --second-font: "Montserrat", sans-serif;
+  --h2-font-size: 1.25rem;
+  --small-font-size: 0.813rem;
+  --font-semi-bold: 600;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+ }
+ 
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcm00MjItMDQ3LWtxOTJ3eDl5LmpwZw.jpg");
+  position: relative; /* Add this to make the overlay relative to the body */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: "" ; /* Adjust the opacity by changing the alpha value (0 to 1) */
+  z-index: -1;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+ul {
+ list-style: none;
+}
+
+a {
+ text-decoration: none;
+}
