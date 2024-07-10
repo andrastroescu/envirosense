@@ -15,6 +15,7 @@ const NavbarHook = ({ setIsLoggedIn, setUserRole }) => {
 
   useEffect(() => {
     console.log('isMobile:', isMobile);
+    console.log("hi");
   }, [isMobile]);
 
   useEffect(() => {
