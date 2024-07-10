@@ -155,7 +155,7 @@ const CameraComponent = () => {
             </div>
             </div>
         </div>
-            <section className='main-content'>
+            <section className=''>
                 <div className="camera-container">
                     <div className="camera-controls">
                         <button onClick={startCamera} className="control-button">Start Camera</button>

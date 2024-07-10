@@ -3,6 +3,7 @@ import { Button, Upload } from "antd";
 import { FaRecycle } from 'react-icons/fa';
 import "antd/dist/reset.css";
 import { jwtDecode as jwt_decode } from 'jwt-decode';
+import ItemDetails from './ItemDetails';
 
 
 const UploadComponent = ({ onPrediction, onClassCharacteristics }) => {
@@ -10,6 +11,7 @@ const UploadComponent = ({ onPrediction, onClassCharacteristics }) => {
     const [prediction, setPrediction] = useState(null);
     const [classCharacteristics, setClassCharacteristics] = useState([]);
     const [userId, setUserId] = useState(null); // State to store the userId
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
         // Get the token from local storage
@@ -21,11 +23,26 @@ const UploadComponent = ({ onPrediction, onClassCharacteristics }) => {
           setUserId(userId);
         }
       }, []);
+
+      const currentChar = classCharacteristics[currentIndex];
+
       
     const handleFileChange = (event) => {
         const selectedFile = event.file;
         setFile(selectedFile);
     };
+
+    const handleNext = () => {
+        if (currentIndex < classCharacteristics.length - 1) {
+          setCurrentIndex(currentIndex + 1);
+        }
+      };
+    
+      const handlePrevious = () => {
+        if (currentIndex > 0) {
+          setCurrentIndex(currentIndex - 1);
+        }
+      };
 
     const handleUpload = async () => {
         if (!file) {
@@ -74,21 +91,17 @@ const UploadComponent = ({ onPrediction, onClassCharacteristics }) => {
             </Upload.Dragger>
             <button onClick={handleUpload} className="control-button">See product features</button>
             {prediction && (
-                <div className="prediction-container">
-                    <h2 style={{ color: '#146c43', textAlign: 'center' }} className="prediction-heading"> {prediction}</h2>
-                    <div className="class-characteristics">
-                        <p style={{ fontWeight: 'normal' }}> Product details </p>
-                        <hr />
-                        <ul>
-                            {classCharacteristics.map((char, index) => (
-                                <li key={index}>
-                                    <b> {char.component} </b>: {char.material} {char.percentage}% <br />
-                                    <strong>Additional information:</strong> {char.additional_info}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
+          <div className="main-content" style={{ marginTop: '150px' }}>
+            <h2 style={{ color: '#146c43', textAlign: 'center' }} className="prediction-heading">{prediction}</h2>
+            <div className="" > 
+              <ItemDetails 
+                item={currentChar} 
+                handleNext={handleNext} 
+                handlePrevious={handlePrevious}
+                currentIndex={currentIndex} 
+                totalItems={classCharacteristics.length} />
+            </div>
+            </div>
             )}
         </div>
     );

@@ -21,6 +21,7 @@ const UserProfile = () => {
   const [userData, setUserData] = useState(null);
   const [formData, setFormData] = useState({});
   const [userId, setUserId] = useState(null);
+  const [showModal, setShowModal] = useState(false); // State to control modal visibility
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -46,6 +47,8 @@ const UserProfile = () => {
         },
       });
       fetchUserData(userId); // Fetch updated user data
+      setShowModal(true); // Show the modal on success
+      console.log(showModal);
     } catch (error) {
       console.error('Error updating user data:', error);
     }
@@ -238,7 +241,19 @@ const UserProfile = () => {
         )}
       </section>
     </div>
-    <div style={{height: '100px'}}></div>
+          
+      {/* Modal for Update Confirmation */}
+{showModal && (<>
+  <div> Profile updated! </div>
+  <div className="modal">
+    <div className="modal-content">
+      <span className="close" onClick={() => setShowModal(false)}>&times;</span>
+      <p>Updates were successfully configured!</p>
+    </div>
+  </div></>
+)}
+
+    <div style={{height: '300px'}}></div>
     </>
   );
 };

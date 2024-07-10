@@ -66,6 +66,11 @@ a{
   /* Darker shade of primary color on hover */
 }
 
+.control-button:hover {
+  background-color: #24b470;
+  /* Darker shade of primary color on hover */
+}
+
 .custom-card {
   width: 300px;
   margin: 10px;
@@ -254,10 +259,6 @@ a{
   max-width: 30%;
 }
 
-.control-button:hover {
-  background-color: var(--first-color);
-}
-
 .camera-feed {
   position: relative;
   width: 100%;
@@ -408,4 +409,49 @@ p {
 .link-container a:hover {
   color: var(--first-color); /* Change color on hover */ 
   font-weight: 500;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #footprintChart {
+    width: 100%;
+  }
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }

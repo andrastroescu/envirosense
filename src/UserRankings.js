@@ -40,7 +40,7 @@ const UserRankings = ({ userId }) => {
     const maxEnvironmentalImpact = users.length ? Math.max(...users.map(user => user.EnvironmentalImpact)) : 1;
 
     return (
-        <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px', textAlign: 'center' }}>
+        <div style={{ maxWidth: '600px', margin: '0 auto', padding: '', textAlign: 'center' }}>
             <h4 style={{ textAlign: 'center', margin: '20px' }}>Ranking</h4>
             <p style={{ fontWeight: 'normal' }}> Environmental Impact</p>
             <ul style={{ listStyleType: 'none', padding: 0 }}>
