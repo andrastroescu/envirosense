@@ -41,7 +41,7 @@ const UserProfile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:7000/auth/users/${userId}`, formData, {
+      await axios.put(`https://orca-app-tue3f.ondigitalocean.app/auth/users/${userId}`, formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`, // Include JWT token in headers
         },
@@ -56,7 +56,7 @@ const UserProfile = () => {
 
   const fetchUserData = async (userId) => {
     try {
-      const response = await axios.get(`http://localhost:7000/auth/users/${userId}`, {
+      const response = await axios.get(`https://orca-app-tue3f.ondigitalocean.app/auth/users/${userId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`, // Include JWT token in headers
         },

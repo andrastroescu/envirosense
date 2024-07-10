@@ -9,7 +9,7 @@ const UserRankings = ({ userId }) => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get('http://localhost:7000/crud/users-rankings');
+                const response = await axios.get('https://orca-app-tue3f.ondigitalocean.app/crud/users-rankings');
                 setUsers(response.data);
 
                 // Initialize avatars
@@ -28,7 +28,7 @@ const UserRankings = ({ userId }) => {
 
     const inviteFriend = async () => {
         try {
-            const response = await axios.post('http://localhost:7000/crud/invite-friend', { email });
+            const response = await axios.post('https://orca-app-tue3f.ondigitalocean.app/crud/invite-friend', { email });
             console.log('Invite sent:', response.data);
         } catch (error) {
             console.error('Error sending invite:', error);

@@ -119,7 +119,7 @@ const CameraComponent = () => {
             const formData = new FormData();
             formData.append('image', dataURItoBlob(photo));
             formData.append('user_id', userId);
-            const response = await fetch('http://localhost:5000/classify_image', {
+            const response = await fetch('https://orca-app-tue3f.ondigitalocean.app/classify_image', {
                 method: 'POST',
                 body: formData
             });

@@ -55,7 +55,7 @@ const UploadComponent = ({ onPrediction, onClassCharacteristics }) => {
             formData.append('image', file);
             formData.append('user_id', userId); // Include the userId
 
-            const uploadResponse = await fetch('http://localhost:5000/classify_image', {
+            const uploadResponse = await fetch('https://orca-app-tue3f.ondigitalocean.app/classify_image', {
                 method: 'POST',
                 body: formData
             });

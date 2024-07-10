@@ -16,7 +16,7 @@ const SignUp = () => {
 
         try {
             // Make HTTP POST request to your backend signup endpoint
-            const response = await axios.post('http://localhost:7000/auth/signup', { email, password, firstName, lastName });
+            const response = await axios.post('https://orca-app-tue3f.ondigitalocean.app/auth/signup', { email, password, firstName, lastName });
 
             // Handle successful signup
             console.log('User signed up successfully:', response.data);

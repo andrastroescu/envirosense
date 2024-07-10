@@ -37,7 +37,7 @@ const ProductForm = () => {
     // Function to fetch classes data
     const fetchClasses = async () => {
         try {
-            const response = await axios.get('http://localhost:7000/crud/classes', {
+            const response = await axios.get('https://orca-app-tue3f.ondigitalocean.app/crud/classes', {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`, // Include JWT token in headers
                 },
@@ -51,7 +51,7 @@ const ProductForm = () => {
 
     const fetchClassDetails = async (classId) => {
         try {
-            const response = await axios.get(`http://localhost:7000/crud/class/${classId}/details`, {
+            const response = await axios.get(`https://orca-app-tue3f.ondigitalocean.app/crud/class/${classId}/details`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`, // Include JWT token in headers
                 },
@@ -124,7 +124,7 @@ const ProductForm = () => {
 
     const saveChanges = async () => {
         try {
-            await axios.put(`http://localhost:7000/crud/class/${selectedClass}/details`, classDetails, {
+            await axios.put(`https://orca-app-tue3f.ondigitalocean.app/crud/class/${selectedClass}/details`, classDetails, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`, // Include JWT token in headers
                 },
@@ -139,7 +139,7 @@ const ProductForm = () => {
 
     const handleDeleteClass = async () => {
         try {
-            await axios.delete(`http://localhost:7000/crud/class/${selectedClass}`, {
+            await axios.delete(`https://orca-app-tue3f.ondigitalocean.app/crud/class/${selectedClass}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`, // Include JWT token in headers
                 },
@@ -168,7 +168,7 @@ const ProductForm = () => {
     const handleNewClassFormSubmit = async (formData) => {
         try {
             // Make an HTTP request to create a new class
-            await axios.post('http://localhost:7000/crud/classes', { name: formData }, {
+            await axios.post('https://orca-app-tue3f.ondigitalocean.app/crud/classes', { name: formData }, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`, // Include JWT token in headers
                 },

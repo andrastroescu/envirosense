@@ -14,7 +14,7 @@ const PolarAreaChart = ({ userData }) => {
     // Fetch materials data from API
     const fetchMaterialsData = async () => {
       try {
-        const response = await axios.get(`http://localhost:7000/crud/materials/${userData.id}`);
+        const response = await axios.get(`https://orca-app-tue3f.ondigitalocean.app/crud/materials/${userData.id}`);
         setMaterialsData(response.data);
       } catch (error) {
         console.error('Error fetching materials data:', error);

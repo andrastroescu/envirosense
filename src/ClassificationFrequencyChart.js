@@ -8,7 +8,7 @@ const ClassificationFrequencyChart = ({ userId }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`http://localhost:7000/crud/classification-frequency/${userId}`);
+                const response = await fetch(`https://orca-app-tue3f.ondigitalocean.app/crud/classification-frequency/${userId}`);
                 const data = await response.json();
                 setClassificationData(data);
             } catch (error) {

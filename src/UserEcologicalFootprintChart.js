@@ -9,8 +9,8 @@ const UserEcologicalFootprintChart = ({ userId }) => {
     const fetchData = async () => {
       try {
         const [userDataResponse, comparativeDataResponse] = await Promise.all([
-          fetch(`http://localhost:7000/crud/footprint/${userId}`),
-          fetch(`http://localhost:7000/crud/footprint/comparative`),
+          fetch(`https://orca-app-tue3f.ondigitalocean.app/crud/footprint/${userId}`),
+          fetch(`https://orca-app-tue3f.ondigitalocean.app/crud/footprint/comparative`),
         ]);
 
         const [userData, comparativeData] = await Promise.all([

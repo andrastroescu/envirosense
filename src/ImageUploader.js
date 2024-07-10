@@ -39,7 +39,7 @@ const ImageUploader = () => {
       console.log(formData.get('image'));
 
 
-      const uploadResponse = await fetch('http://localhost:5000/classify_image', {
+      const uploadResponse = await fetch('https://orca-app-tue3f.ondigitalocean.app/classify_image', {
         method: 'POST',
         body: formData
       });
