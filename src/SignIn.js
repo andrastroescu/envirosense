@@ -16,7 +16,7 @@ const SignIn = () => {
 
         try {
             // Make a POST request to your backend login endpoint
-            const response = await axios.post('http://138.68.102.59:7000/auth/login', { username, password });
+            const response = await axios.post('https://orca-app-tue3f.ondigitalocean.app/auth/login', { username, password });
 
             // Extract the JWT token from the response
             const { token } = response.data;
