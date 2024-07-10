@@ -14,6 +14,10 @@ const NavbarHook = ({ setIsLoggedIn, setUserRole }) => {
   const isMobile = useMediaQuery({ maxWidth: "1150px" });
 
   useEffect(() => {
+    console.log('isMobile:', isMobile);
+  }, [isMobile]);
+
+  useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
         const decodedToken = jwtDecode(token);

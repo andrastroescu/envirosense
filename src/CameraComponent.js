@@ -54,7 +54,7 @@ const CameraComponent = () => {
     }, []);
 
     const startCamera = async () => {
-        try {
+        try { 
             if (stream) {
                 stopCamera();
             }
