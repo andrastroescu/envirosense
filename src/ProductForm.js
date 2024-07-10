@@ -36,12 +36,10 @@ const ProductForm = () => {
 
     // Function to fetch classes data
     const fetchClasses = async () => {
+        console.log("fetching classes");
+        console.log(localStorage.getItem('token'));
         try {
-            const response = await axios.get('https://orca-app-tue3f.ondigitalocean.app/crud/classes', {
-                headers: {
-                    //Authorization: `Bearer ${localStorage.getItem('token')}`, // Include JWT token in headers
-                },
-            });
+            const response = await axios.get('https://orca-app-tue3f.ondigitalocean.app/crud/classes');
             setClasses(response.data);
         } catch (error) {
             console.error('Error fetching classes:', error);
