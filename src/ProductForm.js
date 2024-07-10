@@ -39,7 +39,7 @@ const ProductForm = () => {
         try {
             const response = await axios.get('https://orca-app-tue3f.ondigitalocean.app/crud/classes', {
                 headers: {
-                    Authorization: `Bearer ${localStorage.getItem('token')}`, // Include JWT token in headers
+                    //Authorization: `Bearer ${localStorage.getItem('token')}`, // Include JWT token in headers
                 },
             });
             setClasses(response.data);
