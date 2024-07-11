@@ -9,12 +9,12 @@ const UserImagesComponent = ({ userId }) => {
         const fetchImages = async () => {
             try {
                 console.log("calling fetchImages");
-                const response = await axios.get(`https://orca-app-tue3f.ondigitalocean.app/images/${userId}`);
+                const response = await axios.get(`https://lobster-app-zcijr.ondigitalocean.app/images/${userId}`);
                 const images = response.data.images;
                 console.log(images);
 
                 // Set image URLs for all images
-                const urls = images.map(filename => `https://orca-app-tue3f.ondigitalocean.app/images/${userId}/${filename}`);
+                const urls = images.map(filename => `https://lobster-app-zcijr.ondigitalocean.app/images/${userId}/${filename}`);
                 setImageUrls(urls);
             } catch (error) {
                 console.error('Error fetching images:', error);
